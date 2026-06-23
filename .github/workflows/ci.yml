@@ -1,0 +1,41 @@
+name: CI
+
+# Verifica che il progetto compili. Gira su ogni PR verso main
+# (incluse quelle di Dependabot) e sui push diretti su main, così
+# un aggiornamento di dipendenze che rompe il build viene segnalato
+# prima del merge.
+on:
+  pull_request:
+    branches: [main]
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: ci-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  build:
+    name: Install & build
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      # Niente package-lock.json nel repo → install (non ci).
+      - run: npm install
+
+      # Audit informativo sulle dipendenze runtime (non blocca la PR).
+      - name: Security audit (runtime deps)
+        run: npm audit --omit=dev --audit-level=high
+        continue-on-error: true
+
+      # tsc -b (type-check) + vite build: fallisce se l'update rompe qualcosa.
+      - run: npm run build
