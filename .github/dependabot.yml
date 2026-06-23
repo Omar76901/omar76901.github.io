@@ -10,9 +10,23 @@ updates:
       - dependencies
     commit-message:
       prefix: "deps"
-    # Raggruppa gli aggiornamenti minori/patch in un'unica PR
+    # Raggruppa i pacchetti interdipendenti in un'unica PR (anche i major),
+    # così non si creano conflitti di peer dependency tra PR separate.
     groups:
-      minor-and-patch:
+      react:
+        patterns:
+          - react
+          - react-dom
+          - "@types/react"
+          - "@types/react-dom"
+      vite:
+        patterns:
+          - vite
+          - "@vitejs/*"
+      # Tutto il resto: solo minor/patch insieme.
+      others:
+        patterns:
+          - "*"
         update-types:
           - minor
           - patch
