@@ -1,13 +1,11 @@
 name: CI
 
-# Verifica che il progetto compili. Gira su ogni PR verso main
-# (incluse quelle di Dependabot) e sui push diretti su main, così
-# un aggiornamento di dipendenze che rompe il build viene segnalato
-# prima del merge.
+# Check di build sulle PR verso main (incluse quelle di Dependabot):
+# se un aggiornamento di dipendenze rompe il build, la PR risulta rossa
+# e non viene mergiata. Il rilascio su Pages è gestito da deploy.yml,
+# che a sua volta builda prima di rilasciare (deploy needs build).
 on:
   pull_request:
-    branches: [main]
-  push:
     branches: [main]
   workflow_dispatch:
 
