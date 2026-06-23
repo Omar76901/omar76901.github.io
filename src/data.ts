@@ -3,68 +3,75 @@
 //  file per personalizzare testi, progetti, skill e contatti.
 // ──────────────────────────────────────────────────────────────
 
+// Colore accento usato ovunque (dot, link, bottoni primari, anni).
+// Alternative dal template: #00ADD8 (Go blue), #3ddc97, #c9a96a, #7c8cff.
+export const ACCENT = '#4cc9c0'
+
 export const profile = {
-  name: 'Omar Nespoli',
-  role: 'Software Developer',
-  // Handle "anonimo" mostrato come prompt nella Hero.
-  handle: 'root@on',
-  // Una frase di presentazione mostrata nella Hero.
-  tagline:
-    'Costruisco backend, automazioni e infrastruttura. Codice pulito, sistemi sicuri, zero rumore.',
-  // Paragrafo più lungo nella sezione About.
+  brand: 'omar.nespoli',
+  github: 'https://github.com/Omar76901',
+  githubLabel: 'github.com/Omar76901',
+
+  // Hero
+  statusLine: 'backend developer @ Sorint.lab · based in Italy',
+  headline: 'Backend developer building reliable, secure distributed systems.',
+  intro: [
+    'Hacker by nature, developer by profession.',
+    'I design and ship services in Go, Java and Python —',
+    'from identity to object storage — and run them on Kubernetes.',
+  ],
+
+  // About
+  showAvatar: true,
+  avatar: '/avatar.jpg',
+  avatarCaption: ['Omar Nespoli', '@sorintlab', 'Italy'],
   about:
-    'Sviluppatore con il pallino per automazione, integrazioni e sicurezza. ' +
-    'Lavoro principalmente con Python e Docker e mi muovo nel front-end moderno (questo sito gira su React + Vite). ' +
-    'Trasformo problemi ripetitivi in strumenti che lavorano al posto mio.',
+    'Software engineer focused on backend and platform work. I care about ' +
+    'systems that are honest about their failure modes — clean APIs, observable ' +
+    'services, and infrastructure you can reason about. Keep it minimal. Keep it ' +
+    'dark. Keep it honest.',
+  stack: [
+    'Go',
+    'Python',
+    'Java',
+    'Micronaut',
+    'Docker',
+    'Kubernetes',
+    'Linux',
+    'PostgreSQL',
+    'MinIO',
+  ],
+
+  // Contact
+  ctaTitle: "Let's build something solid.",
+  ctaSubtitle:
+    'Always happy to talk distributed systems, security and open source.',
+}
+
+// Marquee animato dietro la hero (due righe in direzioni opposte).
+export const marquee = {
+  row1: 'GO · KUBERNETES · KEYCLOAK · DOCKER · POSTGRESQL · MINIO · LINUX · MICRONAUT · ',
+  row2: 'DISTRIBUTED SYSTEMS · IDENTITY · OBSERVABILITY · SECURITY · CLEAN APIS · CLOUD NATIVE · ',
 }
 
 export type Project = {
   title: string
+  year: string
   description: string
-  tech: string[]
-  repo?: string
-  demo?: string
+  tags: string[]
+  href: string
+  thumbCaption: string
 }
 
+// Solo progetti reali. Aggiungine altri copiando il blocco.
 export const projects: Project[] = [
   {
-    title: 'Portfolio personale',
+    title: 'omar76901.github.io',
+    year: '2026',
     description:
-      'Questo sito: single-page application su React + Vite + TypeScript, con CSP, CodeQL e Dependabot. Deploy automatico su GitHub Pages via GitHub Actions.',
-    tech: ['React', 'TypeScript', 'Vite', 'GitHub Pages', 'CodeQL'],
-    repo: 'https://github.com/Omar76901/omar76901.github.io',
-    demo: 'https://omar76901.github.io',
+      'This very portfolio — a static SPA built with React + Vite, minimal and dark, deployed on GitHub Pages.',
+    tags: ['React', 'TypeScript', 'Vite'],
+    href: 'https://github.com/Omar76901/omar76901.github.io',
+    thumbCaption: '// portfolio.png',
   },
-  // Aggiungi qui altri progetti copiando il blocco qui sopra.
-]
-
-export type SkillGroup = {
-  category: string
-  items: string[]
-}
-
-export const skills: SkillGroup[] = [
-  {
-    category: 'Linguaggi',
-    items: ['Python', 'TypeScript', 'JavaScript', 'SQL'],
-  },
-  {
-    category: 'Front-end',
-    items: ['React', 'HTML', 'CSS', 'Vite'],
-  },
-  {
-    category: 'DevOps & Security',
-    items: ['Docker', 'Git', 'GitHub Actions', 'Linux', 'CodeQL'],
-  },
-]
-
-export type SocialLink = {
-  label: string
-  href: string
-  // Icona SVG inline (path) — vedi components/icons.
-  icon: 'github' | 'linkedin' | 'mail'
-}
-
-export const socials: SocialLink[] = [
-  { label: 'GitHub', href: 'https://github.com/Omar76901', icon: 'github' },
 ]
