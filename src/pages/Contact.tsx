@@ -1,13 +1,14 @@
 import { socials } from '../data'
-import { icons } from './icons'
+import { icons } from '../components/icons'
 
 export default function Contact() {
   return (
-    <section id="contact" className="section section--contact">
-      <h2 className="section__title">Contatti</h2>
-      <p className="contact__lead">
-        Niente email, niente social. Il codice parla da solo: trovami su GitHub.
+    <section className="page">
+      <h1 className="page__title">contatti</h1>
+      <p className="page__lead">
+        # niente email, niente social. Il codice parla da solo.
       </p>
+
       <div className="contact__links">
         {socials.map((s) => {
           const Icon = icons[s.icon]
