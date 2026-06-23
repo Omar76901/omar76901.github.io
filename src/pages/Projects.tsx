@@ -2,8 +2,10 @@ import { projects } from '../data'
 
 export default function Projects() {
   return (
-    <section id="projects" className="section">
-      <h2 className="section__title">Progetti</h2>
+    <section className="page">
+      <h1 className="page__title">progetti</h1>
+      <p className="page__lead"># una selezione di cose che ho costruito</p>
+
       <div className="projects__grid">
         {projects.map((p) => (
           <article key={p.title} className="card">
@@ -19,12 +21,12 @@ export default function Projects() {
             <div className="card__links">
               {p.repo && (
                 <a href={p.repo} target="_blank" rel="noreferrer">
-                  Codice ↗
+                  codice ↗
                 </a>
               )}
               {p.demo && (
                 <a href={p.demo} target="_blank" rel="noreferrer">
-                  Demo ↗
+                  demo ↗
                 </a>
               )}
             </div>

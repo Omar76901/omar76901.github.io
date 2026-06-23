@@ -2,8 +2,10 @@ import { skills } from '../data'
 
 export default function Skills() {
   return (
-    <section id="skills" className="section">
-      <h2 className="section__title">Skills &amp; Tech</h2>
+    <section className="page">
+      <h1 className="page__title">skills</h1>
+      <p className="page__lead"># stack e strumenti con cui lavoro</p>
+
       <div className="skills__grid">
         {skills.map((group) => (
           <div key={group.category} className="skills__group">
