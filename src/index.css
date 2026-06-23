@@ -13,7 +13,7 @@
   --text-4: #8b9096;
   --text-5: #6b7075;
 
-  --accent: #4cc9c0; /* sovrascritto da App.tsx con ACCENT */
+  --accent: #c9a96a; /* sovrascritto da App.tsx con ACCENT */
 
   --font-display: 'Space Grotesk', system-ui, sans-serif;
   --font-body: 'IBM Plex Sans', system-ui, sans-serif;
@@ -53,7 +53,7 @@ img {
 }
 
 ::selection {
-  background: rgba(76, 201, 192, 0.3);
+  background: rgba(201, 169, 106, 0.3);
 }
 
 .container {
@@ -148,7 +148,7 @@ img {
   -webkit-text-stroke: 1px rgba(255, 255, 255, 0.05);
 }
 .marquee__track--accent span {
-  -webkit-text-stroke: 1px rgba(76, 201, 192, 0.06);
+  -webkit-text-stroke: 1px rgba(201, 169, 106, 0.06);
 }
 .marquee__track--left {
   animation: marquee-left 55s linear infinite;
@@ -215,7 +215,7 @@ img {
   color: var(--accent);
 }
 .btn--accent:hover {
-  background: rgba(76, 201, 192, 0.1);
+  background: rgba(201, 169, 106, 0.1);
 }
 .btn--ghost {
   border-color: var(--border-3);
@@ -278,6 +278,13 @@ img {
   );
   margin-bottom: 14px;
   overflow: hidden;
+}
+.card__thumb-img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 .card__thumb-cap {
   position: absolute;
