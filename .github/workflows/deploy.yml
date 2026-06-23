@@ -26,6 +26,12 @@ jobs:
 
       # Niente package-lock.json nel repo → usiamo install (non ci).
       - run: npm install
+
+      # Controllo vulnerabilità sulle dipendenze runtime (non blocca il deploy).
+      - name: Security audit (runtime deps)
+        run: npm audit --omit=dev --audit-level=high
+        continue-on-error: true
+
       - run: npm run build
 
       - uses: actions/configure-pages@v5

@@ -9,7 +9,7 @@ export default function Navbar() {
   return (
     <header className="navbar">
       <a href="#top" className="navbar__brand">
-        ON<span>.</span>
+        ~/on<span>_</span>
       </a>
       <nav className="navbar__nav">
         {links.map((l) => (

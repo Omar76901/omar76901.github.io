@@ -6,7 +6,7 @@ export default function Contact() {
     <section id="contact" className="section section--contact">
       <h2 className="section__title">Contatti</h2>
       <p className="contact__lead">
-        Hai un progetto in mente o vuoi solo fare due chiacchiere? Scrivimi.
+        Niente email, niente social. Il codice parla da solo: trovami su GitHub.
       </p>
       <div className="contact__links">
         {socials.map((s) => {

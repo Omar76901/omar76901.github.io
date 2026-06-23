@@ -4,11 +4,22 @@
     <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- Content Security Policy: lo script e gli asset sono solo same-origin.
+         frame-ancestors/X-Frame-Options non sono impostabili via <meta> su
+         GitHub Pages (richiedono header HTTP). -->
+    <meta
+      http-equiv="Content-Security-Policy"
+      content="default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline'; img-src 'self' data:; font-src 'self'; connect-src 'self'; object-src 'none'; base-uri 'self'; form-action 'none'; upgrade-insecure-requests"
+    />
+    <meta name="referrer" content="no-referrer" />
+    <meta name="color-scheme" content="dark" />
+
     <meta
       name="description"
-      content="Portfolio di Omar Nespoli — sviluppatore. Progetti, competenze e contatti."
+      content="// portfolio — progetti e competenze. accesso pubblico."
     />
-    <title>Omar Nespoli — Portfolio</title>
+    <title>~/ portfolio</title>
   </head>
   <body>
     <div id="root"></div>

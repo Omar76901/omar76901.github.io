@@ -1,0 +1,28 @@
+version: 2
+updates:
+  # Dipendenze npm del sito
+  - package-ecosystem: npm
+    directory: "/"
+    schedule:
+      interval: weekly
+    open-pull-requests-limit: 10
+    labels:
+      - dependencies
+    commit-message:
+      prefix: "deps"
+    # Raggruppa gli aggiornamenti minori/patch in un'unica PR
+    groups:
+      minor-and-patch:
+        update-types:
+          - minor
+          - patch
+
+  # Versioni delle GitHub Actions usate nei workflow
+  - package-ecosystem: github-actions
+    directory: "/"
+    schedule:
+      interval: weekly
+    labels:
+      - ci
+    commit-message:
+      prefix: "ci"
