@@ -19,7 +19,9 @@ Indica:
 
 ## Misure di sicurezza attive
 
-- **Content Security Policy** restrittiva via `<meta>` in `index.html`.
+- **Content Security Policy** restrittiva via `<meta>` in `index.html`. Script e
+  asset sono `'self'`; gli unici domini esterni ammessi sono **Google Fonts**
+  (`fonts.googleapis.com` per gli stili, `fonts.gstatic.com` per i file dei font).
 - **Versioni delle dipendenze fissate** (pin esatto) in `package.json`.
 - **Dependabot** per aggiornamenti di sicurezza su npm e GitHub Actions.
 - **CodeQL** (analisi statica `security-and-quality`) a ogni push/PR e settimanale.
