@@ -20,6 +20,14 @@ export default function Work() {
             rel="noopener"
           >
             <div className="card__thumb">
+              {p.thumb && (
+                <img
+                  className="card__thumb-img"
+                  src={p.thumb}
+                  alt={p.title}
+                  loading="lazy"
+                />
+              )}
               <span className="card__thumb-cap">{p.thumbCaption}</span>
             </div>
             <div className="card__titlerow">

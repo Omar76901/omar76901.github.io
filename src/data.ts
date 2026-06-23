@@ -4,8 +4,8 @@
 // ──────────────────────────────────────────────────────────────
 
 // Colore accento usato ovunque (dot, link, bottoni primari, anni).
-// Alternative dal template: #00ADD8 (Go blue), #3ddc97, #c9a96a, #7c8cff.
-export const ACCENT = '#4cc9c0'
+// Alternative: #4cc9c0 (cyan), #00ADD8 (Go blue), #3ddc97 (emerald), #7c8cff (violet).
+export const ACCENT = '#c9a96a' // gold
 
 export const profile = {
   brand: 'omar.nespoli',
@@ -61,6 +61,8 @@ export type Project = {
   tags: string[]
   href: string
   thumbCaption: string
+  // Immagine del thumbnail (in /public). Se assente, mostra il placeholder a righe.
+  thumb?: string
 }
 
 // Solo progetti reali. Aggiungine altri copiando il blocco.
@@ -72,6 +74,7 @@ export const projects: Project[] = [
       'This very portfolio — a static SPA built with React + Vite, minimal and dark, deployed on GitHub Pages.',
     tags: ['React', 'TypeScript', 'Vite'],
     href: 'https://github.com/Omar76901/omar76901.github.io',
-    thumbCaption: '// portfolio.png',
+    thumb: '/thumb-portfolio.svg',
+    thumbCaption: '// omar76901.github.io',
   },
 ]
